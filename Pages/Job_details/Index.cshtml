@@ -1,0 +1,62 @@
+﻿@page
+@model Employment_advertisement_project.Pages.Job_details.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!--code to display the database on the home page of job details table by clicking on it-->
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Job role
+            </th>
+            <th>
+                Job type
+            </th>
+            <th>
+                Job salary
+            </th>
+            <th>
+                Job description
+            </th>
+            <th>
+                Employer Detail
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Job_Detail)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job_role)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job_salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Job_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employer_Detail.Employer_name)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

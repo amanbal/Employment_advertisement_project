@@ -1,0 +1,55 @@
+﻿@page
+@model Employment_advertisement_project.Pages.Candidate_Details.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<!--code to display the database on the home page of candidate details table by clicking on it-->
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Name of candidate
+            </th>
+            <th>
+                DOB of candidate
+            </th>
+            <th>
+                Mobile no of candidate
+            </th>
+            <th>
+                Email address of candidate
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Candidate_Detail) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_of_candidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB_of_candidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile_no_of_candidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_address_of_candidate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

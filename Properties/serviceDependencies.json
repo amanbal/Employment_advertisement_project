@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "EAPdatabase"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "EAproject"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "Employment_advertisement_project_Database"
+    },
+    "mssql4": {
+      "type": "mssql",
+      "connectionId": "Employment_advertisementDatabase"
+    }
+  }
+}
